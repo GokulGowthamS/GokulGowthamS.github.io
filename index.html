@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gokul Gowtham S - GitHub Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #040404;
+    }
+    h1 {
+      color: #0c97f4;
+    }
+    .repo {
+      background: rgb(179, 179, 179);
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .repo a {
+      font-size: 1.2rem;
+      color: #007acc;
+      text-decoration: none;
+    }
+    .repo p {
+      margin: 0.5rem 0 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>My GitHub Projects</h1>
+  <div id="repos"></div>
+
+  <script>
+    const username = "GokulGowthamS"; // Your GitHub username
+    const repoContainer = document.getElementById("repos");
+
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+      .then(response => response.json())
+      .then(data => {
+        data
+          .filter(repo => repo.name !== "GokulGowthamS.github.io") // Exclude portfolio repo
+          .forEach(repo => {
+            const div = document.createElement("div");
+            div.className = "repo";
+            div.innerHTML = `
+              <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+              <p>${repo.description || "No description available."}</p>
+            `;
+            repoContainer.appendChild(div);
+          });
+      })
+      .catch(error => {
+        repoContainer.innerHTML = `<p>Failed to fetch repositories. Try again later.</p>`;
+        console.error("Error fetching repos:", error);
+      });
+  </script>
+</body>
+</html>
