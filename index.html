@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gokul Gowtham S - GitHub Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>GokulGowtham Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
       padding: 2rem;
-      background: #006A71;
+      background: #A08963;
       max-width: 900px;
       margin: auto;
     }
 
-    h1, h2 {
-      color: #213448;
+    h1 {
+      color: #000000;
+    }
+
+    h2 {
+      color: #F2EFE7
     }
 
     .hero {
-      background: #9ACBD0;
+      background: #F2EFE7;
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgb(92, 92, 92);
@@ -36,16 +44,17 @@
 
     .contact-links {
       margin-top: 1rem;
+      padding-left: 255px;
     }
 
     .contact-links a {
       margin-right: 1rem;
       text-decoration: none;
-      color: #FF0B55;
+      color: #0b64ff;
     }
 
     .repo {
-      background: #9ACBD0;
+      background: #F2EFE7;
       margin: 1rem 0;
       padding: 1rem;
       border-radius: 8px;
@@ -54,20 +63,34 @@
 
     .repo a {
       font-size: 1.2rem;
-      color: #213448;
+      font-weight: bold;
+      color: #000000;
       text-decoration: none;
     }
 
     .repo p {
       margin: 0.5rem 0 0;
     }
+
+    .repo:hover {
+    background: #493628;
+    color: #ffffff;
+    }
+
+    .repo:hover a,
+    .repo:hover p {
+      color: #ffffff;
+    }
+
+
+
   </style>
 </head>
 <body>
 
   <div class="hero">
-    <h1>Gokul Gowtham S</h1>
-    <p><strong>About Me:</strong><br>
+    <h1><i>Gokul Gowtham S</i></h1>
+    <p><i><strong>About Me</strong></i><br>
       Dynamic and Tenacious Analyst with 3 years of experience in decoding complex datasets into actionable insights. 
       Masterfully excavated data through Collecting, Cleaning, and architected interactive visualizations that propelled 
       business decisions. Command expertise in SQL and Python, with a proven history of supercharging operational 
@@ -81,8 +104,10 @@
     </div>
   </div>
 
-  <h2>My GitHub Projects</h2>
-  <div id="repos"></div>
+  <h2><i>My GitHub Projects</i></h2>
+  <div id="repos">
+
+  </div>
 
   <script>
     const username = "GokulGowthamS";
